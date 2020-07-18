@@ -10,6 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component'; 
 import { WeatherIconPipe } from './pipes/weather-icon.pipe'; 
+import { HttpErrorHandler } from './core/services/http-error-handler.service';
+import { MessageService } from './core/services/message.service'
 
 import { MaterialModule } from './material.module';
 import 'hammerjs';
@@ -35,7 +37,8 @@ import 'hammerjs';
     HttpClientModule
   ],
   exports: [HeaderComponent],
-  providers: [],
+  providers: [ HttpErrorHandler,
+    MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
